@@ -1,35 +1,35 @@
-/* Fichier styles.css (Version PRO - Plus de couleurs et style) */
+/* Fichier styles.css (Version Hacking/Terminal - Noir & Orange) */
 :root {
-    --primary-color: #007bff; /* Bleu d'Annonce */
-    --primary-dark: #0056b3; 
-    --accent-color: #17a2b8; /* Turquoise / Cyan - Accentuation Technique */
-    --accent-dark: #0d8299;
-    --text-color: #333;
+    --primary-color: #2c3e50; /* Gris Anthracite/Noir Élégan*/
+    --secondary-color: #34495e; /* Gris foncé */
+    --accent-color: #e67e22; /* Orange Vif (Couleur d'Alerte/Terminal) */
+    --accent-dark: #d35400; /* Orange plus foncé au survol */
+    --text-color: #ecf0f1; /* Texte très clair sur fond sombre */
+    --dark-text: #34495e; /* Texte sombre pour les fonds clairs (Hero) */
     --white: #fff;
-    --light-bg: #f8f9fa; /* Arrière-plan très clair */
-    --shadow-light: 0 4px 6px rgba(0, 0, 0, 0.1);
-    --shadow-deep: 0 6px 15px rgba(0, 0, 0, 0.15);
+    --light-bg: #f5f7fa; /* Fond très clair pour le corps */
+    --shadow-light: 0 6px 15px rgba(0, 0, 0, 0.2);
+    --shadow-deep: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Police moderne */
+    font-family: 'Roboto Mono', monospace; /* Police plus technique/terminale */
     margin: 0;
     padding: 0;
-    color: var(--text-color);
-    background-color: var(--light-bg); /* Fond très légèrement gris */
+    color: var(--dark-text); /* Texte sombre par défaut */
+    background-color: var(--light-bg);
     line-height: 1.6;
 }
 
 /* --- Navigation Bar --- */
 .navbar {
     background-color: var(--primary-color);
-    padding: 15px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    padding: 18px 0; /* Plus haut */
+    box-shadow: var(--shadow-deep);
     position: sticky; 
     top: 0;
     z-index: 1000;
 }
-
 .nav-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -38,79 +38,82 @@ body {
     align-items: center;
     padding: 0 20px;
 }
-
 .nav-logo a {
-    color: var(--white);
+    color: var(--accent-color); /* Logo en couleur accentuée */
     text-decoration: none;
-    font-size: 1.6em;
+    font-size: 1.8em;
     font-weight: 700;
 }
-
 .nav-links a {
-    color: var(--white);
+    color: var(--text-color); /* Texte de la navigation clair */
     text-decoration: none;
     margin-left: 30px;
     font-weight: 500;
-    transition: color 0.3s;
+    transition: color 0.3s, border-bottom 0.3s;
 }
-
 .nav-links a:hover {
-    color: var(--accent-color); /* Survol en couleur accentuée */
+    color: var(--accent-color); 
+    border-bottom: 2px solid var(--accent-color);
 }
 
-/* --- General Layout --- */
-.container {
-    max-width: 1000px;
-    margin: 40px auto;
-    padding: 0 20px;
-}
-
-h1 {
-    font-size: 2.8em;
-    color: var(--text-color);
-    margin-bottom: 5px;
-}
-
-h2 {
-    font-size: 1.8em;
-    color: var(--accent-dark);
-    text-align: center;
-    margin: 40px 0 20px;
-}
-
-/* --- Hero Section (Accueil) - Utilisation du contraste --- */
+/* --- Hero Section (Accueil) --- */
 .hero {
     background-color: var(--white);
-    padding: 60px 40px;
+    padding: 100px 40px; 
     text-align: center;
-    border-radius: 15px;
-    margin-bottom: 40px;
-    box-shadow: var(--shadow-deep);
-    border-top: 5px solid var(--primary-color); /* Bande de couleur pour le style */
+    border-radius: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border-top: 6px solid var(--accent-color); /* Bande de couleur vive */
 }
 
+/* --- Titre principal --- */
+.hero h1 {
+    font-size: 3.5em; 
+    font-weight: 900;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+/* --- Slogan (Tagline) --- */
 .hero .tagline {
-    font-size: 1.3em;
-    font-weight: 600;
-    color: var(--accent-color);
+    font-size: 1.6em;
+    font-weight: 700;
     margin-top: -10px;
-    margin-bottom: 25px;
+    margin-bottom: 35px;
+    color: var(--accent-color);
 }
 
 .hero p {
-    font-size: 1.1em;
-    color: #555;
-    max-width: 700px;
+    font-size: 1.15em;
+    color: #666;
+    max-width: 800px;
     margin: 0 auto 30px;
 }
 
-/* --- Skills Section (Amélioration visuelle) --- */
+/* --- Skills Section --- */
 .skills-wrapper {
     background-color: var(--white);
-    padding: 30px;
+    padding: 40px;
     border-radius: 15px;
     box-shadow: var(--shadow-light);
-    border-left: 5px solid var(--accent-color);
+    border: 1px solid #ddd;
+    margin-bottom: 50px;
+}
+
+h2 {
+    font-size: 2em;
+    color: var(--primary-color);
+    text-align: center;
+    margin: 0 0 30px;
+    border-bottom: 3px solid var(--accent-color);
+    padding-bottom: 10px;
+    display: inline-block;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .skills-list {
@@ -120,28 +123,33 @@ h2 {
     justify-content: center;
     gap: 15px;
     flex-wrap: wrap;
-    margin-top: 20px;
 }
 
 .skills-list li {
-    background: var(--primary-color);
-    color: var(--white);
-    padding: 10px 20px;
-    border-radius: 25px;
-    font-size: 1em;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    transition: background-color 0.3s, transform 0.2s;
+    background: var(--secondary-color); /* Couleur sombre pour le fond */
+    color: var(--text-color); /* Texte clair */
+    padding: 12px 25px;
+    border-radius: 5px; 
+    font-size: 1.05em;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s, transform 0.2s;
     cursor: default;
 }
 
 .skills-list li:hover {
-    background-color: var(--accent-dark); /* Changement de couleur au survol */
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background: var(--accent-color); /* Survol en couleur vive */
+    transform: scale(1.05); 
 }
 
-/* --- Styles pour les autres pages (assurez-vous qu'ils restent propres) --- */
+/* --- Styles pour les autres pages (Nettoyage) --- */
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
 .card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -160,12 +168,12 @@ h2 {
 
 .card:hover {
     transform: translateY(-5px);
-    border-color: var(--accent-color);
+    border-color: var(--accent-color); /* Bordure au survol en orange */
 }
 
 .card a.button {
     display: inline-block;
-    background-color: var(--primary-color);
+    background-color: var(--accent-color);
     color: var(--white);
     padding: 10px 15px;
     border-radius: 5px;
@@ -175,5 +183,5 @@ h2 {
 }
 
 .card a.button:hover {
-    background-color: var(--primary-dark);
+    background-color: var(--accent-dark);
 }
